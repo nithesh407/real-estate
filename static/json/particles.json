@@ -5,7 +5,7 @@
       "value": 50
     },
     "shape": {
-      "type": "circle"
+      "type": "square"
     },
     "opacity": {
       "value": 0.5
