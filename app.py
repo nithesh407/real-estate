@@ -18,6 +18,10 @@ def register():
 def home():
     return render_template("index.html")
 
+@app.route('/agent')
+def agent():
+    return render_template('agent.html')
+
 if __name__ == "__main__":
     app.debug = True
     app.run()
