@@ -1,5 +1,3 @@
-# app.py
-
 from flask import Flask, redirect, render_template, request, session, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -8,18 +6,12 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.debug = True
 app.config.from_object('config.Config')
+app.config['DEBUG'] = True
 
-# Create the SQLAlchemy instance AFTER configuring the app.
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-# Define your User model here (model.py).
-
-class User(db.Model):
-    __tablename__ = 'user'
-
-    username = db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
-    password = db.Column(db.String(300), nullable=False)
+import models
 
 @app.route('/register', methods=['GET', 'POST'])
 def Register():
@@ -27,9 +19,9 @@ def Register():
         username = request.form['username']
         password = request.form['password']
 
-        if not User.query.filter_by(username=username).first():
+        if not models.User.query.filter_by(username=username).first():
             hashed_password = generate_password_hash(password, method='scrypt')
-            new_user = User(username=username, password=hashed_password)
+            new_user = models.User(username=username, password=hashed_password)
             db.session.add(new_user)
             db.session.commit()
             flash('Registration successful. Please log in.', 'success')
@@ -43,15 +35,15 @@ def login():
         username = request.form['username']
         password = request.form['password']
 
-        user = User.query.filter_by(username=username).first()
+        user = models.User.query.filter_by(username=username).first()
 
         if user and check_password_hash(user.password, password):
             flash('Login successful.', 'success')
-            
-            # Store user information in the session
+
+          
             session['user_id'] = user.username
+
             
-            # Redirect to the profile page (index.html)
             return redirect(url_for('profile'))
         else:
             flash('Invalid credentials. Please try again.', 'danger')
