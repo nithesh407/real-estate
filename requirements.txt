@@ -1,2 +1,4 @@
 pip install flask
-pip install cryptography
+pip install Flask SQLAlchemy pymysql
+pip install Flask-Bcrypt
+pip install flask_migrate

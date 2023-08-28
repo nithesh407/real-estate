@@ -18,19 +18,19 @@
 <div id="tsparticles"></div>
 <main class="box">
     <h2>Register</h2>
-    <form>
+    <form method="post" action="{{url_for('Register')}}">
         <div class="inputBox">
             <label for="userName">Username</label>
-            <input type="text" name="userName" id="userName" placeholder="type your username" required/>
+            <input type="text" name="username" id="userName" placeholder="type your username" required/>
         </div>
         <div class="inputBox">
             <label for="userPassword">Password</label>
-            <input type="password" name="userPassword" id="userPassword" placeholder="type your password"
+            <input type="password" name="password" id="userPassword" placeholder="type your password"
                    required/>
         </div>
         <div class="inputBox">
             <label for="userConfirmPassword">Confirm Password</label>
-            <input type="password" name="userPassword" id="userConfirmPassword" placeholder="confirm your password"
+            <input type="password" name="confirm_password" id="userConfirmPassword" placeholder="confirm your password"
                    required/>
         </div>
         <button type="submit" name="" style="float: left;;">Submit</button>
