@@ -1,6 +1,6 @@
 # app.py
 
-from flask import Flask, redirect, render_template, request, url_for, flash
+from flask import Flask, redirect, render_template, request, session, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -47,6 +47,10 @@ def login():
 
         if user and check_password_hash(user.password, password):
             flash('Login successful.', 'success')
+            
+            # Store user information in the session
+            session['user_id'] = user.username
+            
             # Redirect to the profile page (index.html)
             return redirect(url_for('profile'))
         else:

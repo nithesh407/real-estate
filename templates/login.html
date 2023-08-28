@@ -17,7 +17,7 @@
 <div id="tsparticles"></div>
 <main class="box">
     <h2>Login</h2>
-    <form>
+    <form method="post">
         <div class="inputBox">
             <label for="userName">Username</label>
             <input type="text" name="username" id="userName" placeholder="type your username" required/>
@@ -28,7 +28,7 @@
                    required/>
         </div>
         <div>
-            <button type="submit" name=""  style="float: left;"><a href="/index" style="text-decoration: none;color: white;">Submit</a></button>
+            <button type="submit" formaction="{{url_for('login')}}" name=""  style="float: left;">Submit</button>
             <a class="button" href="/register" style="float: left;">Register</a>
         </div>
     </form>
