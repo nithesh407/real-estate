@@ -2,3 +2,5 @@ pip install flask
 pip install Flask SQLAlchemy pymysql
 pip install Flask-Bcrypt
 pip install flask_migrate
+pip install mysql-connector-python
+
