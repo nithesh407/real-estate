@@ -54,9 +54,25 @@ def login():
 def profile():
     return render_template('index.html')
 
-@app.route('/agent')
-def agent():
-    return render_template('agent.html')
+@app.route('/prithivi')
+def prithivi():
+    return render_template('prithivi.html')
+
+@app.route('/pranesh')
+def pranesh():
+    return render_template('pranesh.html')
+
+@app.route('/Nithesh')
+def nithesh():
+    return render_template('nithesh.html')
+
+@app.route('/nix')
+def nix():
+    return render_template('nix.html')
+
+@app.route('/agents')
+def agents():
+    return render_template('agents.html')
 
 if __name__ == '__main__':
     app.run()

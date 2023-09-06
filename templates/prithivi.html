@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--Created by Yauheni Khvashcheuski-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Real Estate Agent Diana Banchero</title>
+        <link rel="shortcut icon" type="image/jpg" href="/static/images/favicon.png"/>
+
+        <!--custom stylesheet-->
+        <link rel="stylesheet" href="{{url_for('static',filename='/prithivi.css')}}">
+
+        <!--font awesome icons-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+
+        <!--google material icons-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <!--jquery cdn-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <!--custom javascript-->
+        <script src="/static/js/script.js"></script>
+
+        <!--scroll up arrow-->
+        <div class="scroll-up">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+
+        <!--hamburger dropdown-->
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!--navigation bar-->
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul> 
+        </nav>
+        
+        <!--home section-->
+        <section class="home" id="home">
+            <div class="home-content" style="display: flex;">
+                <div class="text-1">Prithivi Raj</div>
+                <div class="text-2">Real Estate Agent</div>
+            </div>     
+            <div class="img" style="margin-top: -570px;width: 50px;margin-left: 700px;height: 30%;">
+                <img src="/static/images/prithivi.jpg" alt="prithivi" srcset="">
+            </div>
+        </section>
+
+        <!--about section-->
+        <section class="about" id="about">
+            <h1 class="title">About me</h1>
+            <h2 class="sub-title">Who I am</h2>
+                <div class="about-content">
+                    <div class="column-left">
+                        <img src="/static/images/about-lg.jpg" alt="">
+                    </div>
+                    <div class="column-right">
+                        <p>With unparalleled industry knowledge, experience, and local expertise, 
+                           I'm the South Indian Real Estate expert you've been looking for. Whether you're buying,
+                           selling,  or looking for a new place to rent I can help you get the best deal.
+                        </p>
+                    </div>
+                </div>
+        </section>
+
+        <!--gallery section-->
+        <!-- <section class="gallery" id="gallery">
+            <div class="gallery-content">
+                <div class="text-2">Embrace</div>
+                <div class="text-1">Your Passion</div>
+            </div>
+        </section> -->
+
+        <!--my services section-->
+        <section class="services" id="services">
+                <h1 class="title">My services</h1>
+                <h2 class="sub-title">Experience You Can Trust</h2>
+                <div class="services-content">
+                    <div class="card">
+                        <span class="material-icons">search</span>
+                        <div class="text-2">Rental Search</div>
+                        <p class="service-desc">Assistance finding and moving to a new home.</p>
+                    </div>
+
+                    <div class="card">
+                        <span class="material-icons">real_estate_agent</span>
+                        <div class="text-2">Buying & Selling</div>
+                        <p class="service-desc">Assistance buying a property, also assistance marketing and selling a property.</p>
+                    </div>
+
+                    <div class="card">
+                        <span class="material-icons">question_answer</span>
+                        <div class="text-2">Consultation</div>
+                        <p class="service-desc">Answering all question and giving a personalized and professional opinion.</p>
+                    </div>
+                </div>
+        </section>
+        
+        <!--contant me section start-->
+        <section class="contact" id="contact">
+            <h1 class="title">Contact me</h1>
+            <h2 class="sub-title">Email: prithivi@gmail.com / Tel: +91 9344037417</h2>
+                <div class="contact-content">
+                    <form class="contact-form" name="contact" method="POST" data-netlify="true">
+                        <div class="fields">
+                            <div class="field">
+                                <label for="first-name">First Name</label>
+                                <input style="width: 90%;" type="text" name="first-name" id="" maxlength="32" placeholder="" required>
+                            </div>
+                            <div class="field">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" name="last-name" id="" maxlength="45" placeholder="" required>
+                            </div>
+                            <div class="field" style="width: 100%;">
+                                <label for="email">Email*</label>
+                                <input type="email" name="email" id="" placeholder="" required>
+                            </div>
+                        </div>
+                        <div class="text-area">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="" cols="30" rows="10" maxlength="700" placeholder="" required></textarea>
+                        </div>
+                        <div class="send-button">
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+        </section>
+
+        <!--footer-->
+        <footer>
+            <div class="links">
+                <a class="facebook" href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="instagram"  href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <span>All rights reserved &#169; 2023</span>
+        </footer>
+    </body>
+</html>
