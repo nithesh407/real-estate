@@ -14,6 +14,7 @@ class Clients(db.Model):
     message = db.Column(db.Text)
 
 class Agent(db.Model):
+    
     __tablename__='agent'
     
     name = db.Column(db.String(80), nullable=False)
